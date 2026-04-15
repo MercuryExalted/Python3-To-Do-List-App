@@ -22,3 +22,12 @@ def main()
             break
         else
             print("Invalid choice, try again.")
+
+def view_tasks(tasks):
+    if not tasks:
+        print("\nYour list is empty")
+    else:
+        print("\nYour Tasks:")
+        for index, task in enumerate(tasks, start=1):
+            print(f"{index}. {task}")
+            
