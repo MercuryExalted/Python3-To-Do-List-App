@@ -1,3 +1,20 @@
+import json
+import os
+
+
+FILENAME = "tasks.json"
+
+def save_tasks(tasks):
+    with open(FILENAME, "w") as f:
+        json.dump(tasks, f)
+    print("Tasks saved to disk.")
+
+def load_tasks():
+    if os.path.exists(FILENAME):
+        with open(FILENAME, "r") as f:
+            return json.load(f)
+    return [] #Return empty list if no file exists yet
+
 def show_menu():
     print("\n--- TO-DO LIST MENU ---")
     print("1. View Tasks")
@@ -6,7 +23,7 @@ def show_menu():
     print("4. Exit")
 
 def main():
-    tasks = [] # Local database
+    tasks = load_tasks() # Load existing tasks on startup
     while True:
         show_menu()
         choice = input("Choose an option (1-4):")
