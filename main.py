@@ -30,4 +30,21 @@ def view_tasks(tasks):
         print("\nYour Tasks:")
         for index, task in enumerate(tasks, start=1):
             print(f"{index}. {task}")
-            
+
+def add_task(tasks):
+    new_task = input("Enter the task: ")
+    tasks.append(new_task)
+    print("Task added!")
+
+def remove_task(tasks):
+    view_tasks(tasks)
+    if tasks:
+        try:
+            task_num = int(input("Enter the task number to remove: "))
+            if 1 <= task_num <= len(tasks):
+                removed = tasks.pop(task_num - 1)
+                print(f"Removed: {removed}")
+            else:
+                print("Invalid number.")
+        except ValueError:
+            print("Please enter a valid number.")
