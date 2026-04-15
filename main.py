@@ -49,6 +49,6 @@ def remove_task(tasks):
         except ValueError:
             print("Please enter a valid number.")
 
-# Runs app
+
 if __name__ == "__main__":
     main()
