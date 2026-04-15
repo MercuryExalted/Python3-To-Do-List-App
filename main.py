@@ -5,7 +5,7 @@ def show_menu():
     print("3. Remove Task")
     print("4. Exit")
 
-def main()
+def main():
     tasks = [] # Local database
     while True:
         show_menu()
@@ -16,11 +16,11 @@ def main()
         elif choice == '2':
                 add_task(tasks)
         elif choice == '3':
-            remove_tasks(tasks)
-        elif choice == '4'
+            remove_task(tasks)
+        elif choice == '4':
             print("Goodbye!")
             break
-        else
+        else:
             print("Invalid choice, try again.")
 
 def view_tasks(tasks):
@@ -48,3 +48,6 @@ def remove_task(tasks):
                 print("Invalid number.")
         except ValueError:
             print("Please enter a valid number.")
+
+if __name__ == "__main__":
+    main()
